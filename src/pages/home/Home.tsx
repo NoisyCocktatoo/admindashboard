@@ -2,6 +2,7 @@ import "./home.scss";
 import TopBox from "../../components/topBox/TopBox";
 import ChartBox from "../../components/chartbox/ChartBox";
 import { chartBoxUser } from "../../data";
+import RadarBox from "../../components/radarbox/RadarBox";
 
 const Home = () => {
   return (
@@ -22,7 +23,9 @@ const Home = () => {
         <ChartBox {...chartBoxUser} />
       </div>
       <div className="box box-6">Box 6</div>
-      <div className="box box-7">Box 7</div>
+      <div className="box box-7">
+        <RadarBox />
+      </div>
       <div className="box box-8">Box 8</div>
       <div className="box box-9">Box 9</div>
     </div>
