@@ -1,5 +1,6 @@
 import {
   Legend,
+  ResponsiveContainer,
   PolarAngleAxis,
   PolarGrid,
   PolarRadiusAxis,
@@ -50,26 +51,31 @@ const data = [
 const RadarBox = () => {
   return (
     <div className="radarbox">
-      <RadarChart outerRadius={90} width={730} height={250} data={data}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis angle={30} domain={[0, 150]} />
-        <Radar
-          name="Target"
-          dataKey="A"
-          stroke="#2D89EF"
-          fill="#D5E7FC"
-          fillOpacity={0.6}
-        />
-        <Radar
-          name="Actual"
-          dataKey="B"
-          stroke="#B91D47"
-          fill="#F1D2DA"
-          fillOpacity={0.5}
-        />
-        <Legend />
-      </RadarChart>
+      <h1>Competency Gap</h1>
+      <div className="chart">
+        <ResponsiveContainer width="99%" height={350}>
+          <RadarChart data={data}>
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" />
+            <PolarRadiusAxis angle={30} domain={[0, 150]} />
+            <Radar
+              name="Target"
+              dataKey="A"
+              stroke="#2D89EF"
+              fill="#D5E7FC"
+              fillOpacity={0.6}
+            />
+            <Radar
+              name="Actual"
+              dataKey="B"
+              stroke="#B91D47"
+              fill="#F1D2DA"
+              fillOpacity={0.5}
+            />
+            <Legend />
+          </RadarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

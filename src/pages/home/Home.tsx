@@ -1,8 +1,10 @@
 import "./home.scss";
 import TopBox from "../../components/topBox/TopBox";
 import ChartBox from "../../components/chartbox/ChartBox";
-import { chartBoxUser } from "../../data";
+import { chartBoxUser, barData, barDataRevenue, areaData } from "../../data";
 import RadarBox from "../../components/radarbox/RadarBox";
+import BarBox from "../../components/barBox/BarBox";
+import AreaChartBox from "../../components/areaChart/AreaChartBox";
 
 const Home = () => {
   return (
@@ -17,17 +19,21 @@ const Home = () => {
         <ChartBox {...chartBoxUser} />
       </div>
       <div className="box box-4">
-        <ChartBox {...chartBoxUser} />
+        <RadarBox />
       </div>
       <div className="box box-5">
         <ChartBox {...chartBoxUser} />
       </div>
       <div className="box box-6">Box 6</div>
       <div className="box box-7">
-        <RadarBox />
+        <AreaChartBox {...areaData} />
       </div>
-      <div className="box box-8">Box 8</div>
-      <div className="box box-9">Box 9</div>
+      <div className="box box-8">
+        <BarBox {...barData} />
+      </div>
+      <div className="box box-9">
+        <BarBox {...barDataRevenue} />
+      </div>
     </div>
   );
 };
